@@ -1,86 +1,81 @@
-Library Management System using Spring Boot
-
+Library Management System
 Project Description
+The Library Management System is an API built using Spring Boot that allows librarians to manage books, patrons, and borrowing records. The system provides endpoints for performing CRUD operations on books and patrons, as well as endpoints for handling book borrowing and return transactions.
 
-This project builds a robust and secure Library Management System API using Spring Boot. It empowers librarians to seamlessly manage books, patrons, and borrowing records, enhancing library operations.
+Features
+Book Management:
 
-Key Features
+Retrieve all books
+Retrieve a specific book by ID
+Add a new book
+Update an existing book's information
+Remove a book
+Patron Management:
 
-CRUD Operations:
-Create, read, update, and delete books, patrons, and borrowing records.
-RESTful API Endpoints:
-Books:
-GET /api/books - Retrieves all books.
-GET /api/books/{id} - Fetches a specific book by ID.
-POST /api/books - Creates a new book.
-PUT /api/books/{id} - Updates an existing book's information.
-DELETE /api/books/{id} - Removes a book from the library.
-Patrons:
-GET /api/patrons - Retrieves all registered patrons.
-GET /api/patrons/{id} - Fetches details of a specific patron by ID.
-POST /api/patrons - Registers a new patron in the system.
-PUT /api/patrons/{id} - Updates existing patron information.
-DELETE /api/patrons/{id} - Removes a patron from the system.
-Borrowing:
-POST /api/borrow/{bookId}/patron/{patronId} - Records a patron borrowing a book.
-PUT /api/return/{bookId}/patron/{patronId} - Tracks the book's return by the patron.
-Data Persistence:
-Leverages a robust database (e.g., MySQL, PostgreSQL) for storing book, patron, and borrowing record details.
-Meticulously defines relationships between entities for efficient data management (e.g., one-to-many between books and borrowing records).
-Validation and Error Handling:
-Implements rigorous input validation for API requests to enforce data integrity.
-Handles exceptions gracefully, returning informative error messages with appropriate HTTP status codes.
-Security (Optional):
-Offers an extra layer of protection through basic authentication or JWT-based authorization (consider implementing for enhanced security).
-Optional Extensions (For Advanced Customization):
+Retrieve all patrons
+Retrieve a specific patron by ID
+Add a new patron
+Update an existing patron's information
+Remove a patron
+Borrowing Records:
 
-Logging:
-Employs Aspect-Oriented Programming (AOP) to log method calls, exceptions, and performance metrics for book operations, patron transactions, and similar critical functionalities.
-Caching:
-Utilizes Spring's caching capabilities to cache frequently accessed book details or patron information, boosting system performance.
-Transaction Management:
-Integrates declarative transaction management using Spring's @Transactional annotation to ensure data consistency during crucial operations like book updates, patron registrations, and borrowing/returning of books.
+Borrow a book
+Return a borrowed book
+API Endpoints
+Book Management
+Retrieve all books: GET /api/books
+Retrieve a specific book by ID: GET /api/books/{id}
+Add a new book: POST /api/books
+Update a book's information: PUT /api/books/{id}
+Remove a book: DELETE /api/books/{id}
+Patron Management
+Retrieve all patrons: GET /api/patrons
+Retrieve a specific patron by ID: GET /api/patrons/{id}
+Add a new patron: POST /api/patrons
+Update a patron's information: PUT /api/patrons/{id}
+Remove a patron: DELETE /api/patrons/{id}
+Borrowing Records
+Borrow a book: POST /api/borrow/{bookId}/patron/{patronId}
+Return a borrowed book: PUT /api/return/{bookId}/patron/{patronId}
+Data Storage
+The system uses a relational database (e.g., H2, MySQL, PostgreSQL) to persist data for books, patrons, and borrowing records. The relationships between these entities are established using JPA annotations.
+
+Validation and Error Handling
+Input validation is implemented for API requests to ensure data integrity. The application handles exceptions gracefully and returns appropriate HTTP status codes and error messages.
+
+Security (Optional)
+The API can be secured using basic authentication or JWT-based authorization to protect the endpoints.
+
+Caching (Optional)
+Spring’s caching mechanisms can be utilized to cache frequently accessed data, such as book details or patron information, to improve performance.
+
+Transaction Management
+Declarative transaction management is implemented using Spring's @Transactional annotation to ensure data integrity during critical operations.
+
 Testing
+Unit tests are provided to validate the functionality of the API endpoints. Testing frameworks such as JUnit, Mockito, and SpringBootTest are used to ensure comprehensive test coverage.
 
-Unit Testing:
-Embraces unit tests written using JUnit, Mockito, or SpringBootTest to thoroughly validate the functionality of API endpoints and core components.
-Documentation
+How to Run
+Clone the repository:
 
-Provides crystal-clear documentation encompassing:
-Instructions for running the application.
-Guidance on interacting with API endpoints, including authentication methods (if applicable).
-Refer to the docs folder or designated sections within the code for detailed documentation.
-Evaluation Criteria
+bash
+Copy code
+git clone https://github.com/AyahAlNatour/Library-Management-System.git
+cd Library-Management-System
+Build the project using Maven:
 
-Functionality:
-Rigorously tests CRUD operations for books, patrons, and borrowing records to ensure flawless execution.
-Code Quality:
-Emphasizes readable, maintainable, and well-structured code that adheres to best practices.
-Error Handling:
-Comprehensively assesses the handling of edge cases and validation errors to guarantee system robustness.
-Testing:
-Evaluates the thoroughness and effectiveness of the implemented unit tests.
-Bonus:
-Credits are awarded for the inclusion of extra features like authorization, transactions, caching, and aspect-oriented logging.
-Getting Started
+bash
+Copy code
+mvn clean install
+Run the application:
 
-Clone the Repository:
-
-Bash
-git clone https://github.com/<your-username>/library-management-system.git
-Use code with caution.
-
-Replace <your-username> with your actual GitHub username.
-
-Set Up Dependencies:
-Ensure you have the necessary dependencies installed on your system (Java, Maven, etc.) as outlined in the project's requirements.
-
-Run the Application:
-Navigate to the project directory and execute:
-
-Bash
+bash
+Copy code
 mvn spring-boot:run
-Use code with caution.
+The API will be available at http://localhost:8080/api/.
 
-Interact with the API:
-Refer to the provided documentation (e.g., docs
+Contributing
+Contributions are welcome! Please fork the repository and submit a pull request.
+
+License
+This project is licensed under the MIT License - see the LICENSE file for details.
